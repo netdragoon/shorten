@@ -12,7 +12,7 @@ class IsGd extends ProviderContract
     public function __construct($url)
     {
 
-        $this->address = 'http://is.gd/create.php?format=simple&url={0}';
+        $this->address = 'http://is.gd/create.php?format=simple&url=%s';
 
         $this->client = new Curl();
 
@@ -26,7 +26,7 @@ class IsGd extends ProviderContract
     public function content()
     {
 
-        return $this->client->result($this->url);
+        return $this->client->result(sprintf($this->address, $this->url));
 
     }
 }
