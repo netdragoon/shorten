@@ -26,7 +26,9 @@ class IsGd extends ProviderContract
     public function content()
     {
 
-        return $this->client->result(sprintf($this->address, $this->url));
+        return $this
+            ->client
+            ->result(sprintf($this->address, $this->url));
 
     }
 }
