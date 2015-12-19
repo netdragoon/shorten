@@ -15,6 +15,17 @@ class Googl extends ProviderContract
     public function __construct($url, $key)
     {
 
+        $this->create($url, $key);
+
+    }
+
+    /**
+     * @param $url
+     * @param $key
+     */
+    public function create($url, $key)
+    {
+
         $this->address = 'https://www.googleapis.com/urlshortener/v1/url?key=%s';
 
         $this->client = new Curl();

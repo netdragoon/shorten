@@ -14,6 +14,16 @@ class MigreMe extends ProviderContract
     public function __construct($url)
     {
 
+        $this->create($url);
+
+    }
+
+    /**
+     * @param $url
+     */
+    public function create($url)
+    {
+
         $this->address = 'http://migre.me/api.txt?url=%s';
 
         $this->client = new Curl();

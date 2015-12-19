@@ -4,13 +4,13 @@ namespace Canducci\Shorten\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class Shorten extends Facade
+class IsGd extends Facade
 {
 
     protected static function getFacadeAccessor()
     {
 
-        return 'shorten';
+        return 'isgd';
 
     }
 

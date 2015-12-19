@@ -14,6 +14,16 @@ class TinyUrl extends ProviderContract
     public function __construct($url)
     {
 
+        $this->create($url);
+
+    }
+
+    /**
+     * @param $url
+     */
+    public function create($url)
+    {
+
         $this->address = 'http://tinyurl.com/api-create.php?url=%s';
 
         $this->client = new Curl();

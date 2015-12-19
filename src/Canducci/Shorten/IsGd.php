@@ -14,6 +14,17 @@ class IsGd extends ProviderContract
     public function __construct($url)
     {
 
+        $this->create($url);
+
+    }
+
+    /**
+     * @param $url
+     * @return $this
+     */
+    public function create($url)
+    {
+
         $this->address = 'http://is.gd/create.php?format=simple&url=%s';
 
         $this->client = new Curl();
@@ -24,6 +35,7 @@ class IsGd extends ProviderContract
 
         $this->information['name'] = 'IsGd';
 
-    }
+        return $this;
 
+    }
 }

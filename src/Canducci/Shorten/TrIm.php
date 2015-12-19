@@ -21,6 +21,20 @@ class TrIm extends ProviderContract
     public function __construct($url, $key, $seed = null, $keyword = null, $vanitydomain = null)
     {
 
+        $this->create($url, $key, $seed, $keyword, $vanitydomain);
+
+    }
+
+    /**
+     * @param $url
+     * @param $key
+     * @param null $seed
+     * @param null $keyword
+     * @param null $vanitydomain
+     */
+    public function create($url, $key, $seed = null, $keyword = null, $vanitydomain = null)
+    {
+
         $this->address = 'https://tr.im/links';
 
         $this->client = new Curl();
@@ -67,9 +81,6 @@ class TrIm extends ProviderContract
 
         return json_decode($result)->url;
 
-
     }
-
-
 
 }

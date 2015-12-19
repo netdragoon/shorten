@@ -16,4 +16,5 @@ class ShortenProviderType extends ShortenProviderTypeContract
         parent::__construct($name, $address);
 
     }
+
 }

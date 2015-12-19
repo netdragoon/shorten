@@ -1,13 +1,13 @@
 <?php
 
 use Canducci\Shorten\Bitly;
-use Canducci\Shorten\Contracts\ProviderContract;
 use Canducci\Shorten\Googl;
 use Canducci\Shorten\IsGd;
 use Canducci\Shorten\MigreMe;
 use Canducci\Shorten\Shorten;
 use Canducci\Shorten\TinyUrl;
 use Canducci\Shorten\TrIm;
+use Canducci\Shorten\Contracts\ProviderContract;
 
 if (!function_exists('shorted'))
 {

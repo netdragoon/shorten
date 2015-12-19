@@ -15,6 +15,17 @@ class Bitly extends ProviderContract
     public function __construct($url, $token)
     {
 
+        $this->create($url, $token);
+
+    }
+
+    /**
+     * @param $url
+     * @param $token
+     */
+    public function create($url, $token)
+    {
+
         $this->address = 'https://api-ssl.bitly.com/v3/shorten?access_token=%s&longUrl=%s&format=txt';
 
         $this->client = new Curl();
