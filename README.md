@@ -19,7 +19,7 @@ The package offers providers in their most current version can be selected for o
 - TinyUrl (http://tinyurl.com/)
 - TrIm (https://tr.im/links)
 
-All of these providers work in a clear and objective manner to generate the urls.
+All of these providers work in a clear and objective manner to generate the urls, of course you must choose one or perhaps all for the generation of short url for your systems.
 
 ## Quick start
 
@@ -124,7 +124,7 @@ Route::get('shorten1',
     $provider2 = $migreme->create('https://packagist.org/packages/canducci/shorten');
     $provider3 = $bitly->create('https://packagist.org/packages/canducci/shorten','key_bitly');
     $provider4 = $googl->create('https://packagist.org/packages/canducci/shorten','key_google');
-    $provider5 = $trim->create('https://packagist.org/packages/canducci/shorten','key_api_key');
+    $provider5 = $trim->create('https://packagist.org/packages/canducci/shorten','key_api');
 
     $shorten0 = $shorten->create($provider0);
     $shorten1 = $shorten->newInstance()->create($provider1);
@@ -159,7 +159,7 @@ $provider1 = TinyUrl::create('https://packagist.org/packages/canducci/shorten');
 $provider2 = MigreMe::create('https://packagist.org/packages/canducci/shorten');
 $provider3 = Bitly::create('https://packagist.org/packages/canducci/shorten','key_bitly');
 $provider4 = Googl::create('https://packagist.org/packages/canducci/shorten','key_google');
-$provider5 = TrIm::create('https://packagist.org/packages/canducci/shorten','key_api_key');
+$provider5 = TrIm::create('https://packagist.org/packages/canducci/shorten','key_api');
 
 $shorten0 = Shorten::create($provider0);
 $shorten1 = Shorten::newInstance()->create($provider1);
@@ -190,7 +190,7 @@ $provider1 = tinyurl('https://packagist.org/packages/canducci/shorten');
 $provider2 = migreme('https://packagist.org/packages/canducci/shorten');
 $provider3 = bitly('https://packagist.org/packages/canducci/shorten','key_bitly');
 $provider4 = googl('https://packagist.org/packages/canducci/shorten','key_google');
-$provider5 = tr_im('https://packagist.org/packages/canducci/shorten','key_api_key');
+$provider5 = tr_im('https://packagist.org/packages/canducci/shorten','key_api');
 
 $shorten0 = shorten($provider0);
 $shorten1 = shorten($provider1);
@@ -211,3 +211,13 @@ echo $shorten4->receive()->getShortUrl();
 echo '<br>';
 echo $shorten5->receive()->getShortUrl();
 ```
+
+### Note
+
+These three providers below must have a register in that site to be released to generate short url with token or key provided on the same register.
+
+- Bitly (key_bitly) (https://bitly.com/)
+- Googl (key_google) (https://developers.google.com/url-shortener/v1/getting_started)
+- TrIm (key_api) (https://tr.im/links)
+
+Different from the others only need to have information as to url so long to run the code successfully.
