@@ -15,11 +15,14 @@ class ShortenServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
         $this->app->singleton('shorten', function($app)
         {
 
             new Shorten(null);
 
         });
+
     }
+
 }

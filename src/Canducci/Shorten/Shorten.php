@@ -7,7 +7,6 @@ use Canducci\Shorten\Contracts\ShortenContract;
 
 class Shorten extends ShortenContract
 {
-
     /**
      * Shorten constructor.
      */
@@ -22,29 +21,5 @@ class Shorten extends ShortenContract
         }
 
     }
-
-    /**
-     * @param ProviderContract $provider
-     * @return $this
-     */
-    public function create(ProviderContract $provider)
-    {
-
-        $this->provider = $provider;
-
-        return $this;
-
-    }
-
-    /**
-     * @return mixed
-     */
-    public function receive()
-    {
-
-        return $this->provider->content();
-
-    }
-
 
 }

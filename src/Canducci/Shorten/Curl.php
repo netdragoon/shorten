@@ -7,7 +7,11 @@ use Canducci\Shorten\Contracts\CurlContract;
 class Curl extends CurlContract
 {
 
-    public function result($url)
+    /**
+     * @param $url
+     * @return mixed
+     */
+    public function getResult($url)
     {
 
         $ch = curl_init();

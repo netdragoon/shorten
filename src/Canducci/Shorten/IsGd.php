@@ -6,6 +6,7 @@ use Canducci\Shorten\Contracts\ProviderContract;
 
 class IsGd extends ProviderContract
 {
+
     /**
      * IsGd constructor.
      */
@@ -16,19 +17,23 @@ class IsGd extends ProviderContract
 
         $this->client = new Curl();
 
-        $this->url = url;
+        $this->longurl = $url;
+
+        $this->information['url'] = 'http://is.gd/';
+
+        $this->information['name'] = 'IsGd';
 
     }
 
     /**
      * @return mixed
      */
-    public function content()
+    public function getContent()
     {
 
         return $this
-            ->client
-            ->result(sprintf($this->address, $this->url));
+            ->getClient()
+            ->getResult(sprintf($this->address, $this->longurl));
 
     }
 }
