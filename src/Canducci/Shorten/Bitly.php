@@ -2,15 +2,17 @@
 
 namespace Canducci\Shorten;
 
-use Canducci\Shorten\Contracts\ProviderContract;
+use Canducci\Shorten\Contracts\BitlyContract;
 
-class Bitly extends ProviderContract
+class Bitly extends BitlyContract
 {
 
     protected $token;
 
     /**
      * Bitly constructor.
+     * @param $url
+     * @param $token
      */
     public function __construct($url, $token)
     {
@@ -22,6 +24,7 @@ class Bitly extends ProviderContract
     /**
      * @param $url
      * @param $token
+     * @return $this
      */
     public function create($url, $token)
     {
@@ -37,6 +40,8 @@ class Bitly extends ProviderContract
         $this->information['url'] = 'http://www.bitly.com/';
 
         $this->information['name'] = 'Bitly';
+
+        return $this;
 
     }
 

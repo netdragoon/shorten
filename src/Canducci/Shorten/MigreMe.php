@@ -2,9 +2,9 @@
 
 namespace Canducci\Shorten;
 
-use Canducci\Shorten\Contracts\ProviderContract;
+use Canducci\Shorten\Contracts\MigreMeContract;
 
-class MigreMe extends ProviderContract
+class MigreMe extends MigreMeContract
 {
 
     /**
@@ -20,6 +20,7 @@ class MigreMe extends ProviderContract
 
     /**
      * @param $url
+     * @return $this
      */
     public function create($url)
     {
@@ -33,6 +34,8 @@ class MigreMe extends ProviderContract
         $this->information['url'] = 'http://migre.me/';
 
         $this->information['name'] = 'MigreMe';
+
+        return $this;
 
     }
 

@@ -7,8 +7,10 @@ use Canducci\Shorten\Contracts\ShortenContract;
 
 class Shorten extends ShortenContract
 {
+
     /**
      * Shorten constructor.
+     * @param ProviderContract|null $provider
      */
     public function __construct(ProviderContract $provider = null)
     {

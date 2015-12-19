@@ -2,15 +2,17 @@
 
 namespace Canducci\Shorten;
 
-use Canducci\Shorten\Contracts\ProviderContract;
+use Canducci\Shorten\Contracts\GooglContract;
 
-class Googl extends ProviderContract
+class Googl extends GooglContract
 {
 
     private $key;
 
     /**
      * Googl constructor.
+     * @param $url
+     * @param $key
      */
     public function __construct($url, $key)
     {
@@ -22,6 +24,7 @@ class Googl extends ProviderContract
     /**
      * @param $url
      * @param $key
+     * @return $this
      */
     public function create($url, $key)
     {
@@ -37,6 +40,8 @@ class Googl extends ProviderContract
         $this->information['url'] = 'https://www.googleapis.com/';
 
         $this->information['name'] = 'Googl';
+
+        return $this;
 
     }
 

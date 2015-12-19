@@ -10,6 +10,8 @@ class ShortenReceive extends ShortenReceiveContract
 
     /**
      * ShortenReceive constructor.
+     * @param ShortenProviderTypeContract $providerType
+     * @param array $receive
      */
     public function __construct(ShortenProviderTypeContract $providerType, array $receive)
     {
@@ -18,6 +20,9 @@ class ShortenReceive extends ShortenReceiveContract
 
     }
 
+    /**
+     * @return array
+     */
     public function toArray()
     {
 
@@ -39,6 +44,9 @@ class ShortenReceive extends ShortenReceiveContract
 
     }
 
+    /**
+     * @return json
+     */
     public function toJson()
     {
 

@@ -2,9 +2,9 @@
 
 namespace Canducci\Shorten;
 
-use Canducci\Shorten\Contracts\ProviderContract;
+use Canducci\Shorten\Contracts\IsGdContract;
 
-class IsGd extends ProviderContract
+class IsGd extends IsGdContract
 {
 
     /**

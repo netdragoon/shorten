@@ -2,9 +2,9 @@
 
 namespace Canducci\Shorten;
 
-use Canducci\Shorten\Contracts\ProviderContract;
+use Canducci\Shorten\Contracts\TrImContract;
 
-class TrIm extends ProviderContract
+class TrIm extends TrImContract
 {
 
     private $seed;
@@ -31,6 +31,7 @@ class TrIm extends ProviderContract
      * @param null $seed
      * @param null $keyword
      * @param null $vanitydomain
+     * @return $this
      */
     public function create($url, $key, $seed = null, $keyword = null, $vanitydomain = null)
     {
@@ -53,8 +54,13 @@ class TrIm extends ProviderContract
 
         $this->information['name'] = 'TrIm';
 
+        return $this;
+
     }
 
+    /**
+     * @return mixed
+     */
     public function getContent()
     {
 

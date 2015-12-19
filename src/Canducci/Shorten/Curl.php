@@ -32,6 +32,12 @@ class Curl extends CurlContract
 
     }
 
+    /**
+     * @param $url
+     * @param $values
+     * @param array $headers
+     * @return mixed
+     */
     public function postResult($url, $values, array $headers = array())
     {
 

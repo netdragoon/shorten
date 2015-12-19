@@ -2,9 +2,9 @@
 
 namespace Canducci\Shorten;
 
-use Canducci\Shorten\Contracts\ProviderContract;
+use Canducci\Shorten\Contracts\TinyUrlContract;
 
-class TinyUrl extends ProviderContract
+class TinyUrl extends TinyUrlContract
 {
 
     /**
@@ -20,6 +20,7 @@ class TinyUrl extends ProviderContract
 
     /**
      * @param $url
+     * @return $this
      */
     public function create($url)
     {
@@ -33,6 +34,8 @@ class TinyUrl extends ProviderContract
         $this->information['url'] = 'http://tinyurl.com/';
 
         $this->information['name'] = 'TinyUrl';
+
+        return $this;
 
     }
 
