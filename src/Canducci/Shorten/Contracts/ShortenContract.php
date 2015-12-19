@@ -26,6 +26,31 @@ abstract class ShortenContract
     /**
      * @return mixed
      */
+    public function getProvider()
+    {
+
+        return $this->provider;
+
+    }
+
+    /**
+     * @param mixed $provider
+     * @return ShortenContract
+     */
+    protected function setProvider($provider)
+    {
+
+        $this->provider = $provider;
+
+        return $this;
+
+    }
+
+
+
+    /**
+     * @return mixed
+     */
     public function receive()
     {
 
@@ -44,6 +69,5 @@ abstract class ShortenContract
         return new ShortenReceive($providerType, $receive);
 
     }
-
 
 }

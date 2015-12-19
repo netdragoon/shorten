@@ -25,11 +25,9 @@ class IsGd extends IsGdContract
     public function create($url)
     {
 
-        $this->address = 'http://is.gd/create.php?format=simple&url=%s';
+        $this->setAddress('http://is.gd/create.php?format=simple&url=%s');
 
-        $this->client = new Curl();
-
-        $this->longurl = $url;
+        $this->setLongUrl($url);
 
         $this->information['url'] = 'http://is.gd/';
 
@@ -38,4 +36,5 @@ class IsGd extends IsGdContract
         return $this;
 
     }
+
 }

@@ -23,6 +23,31 @@ abstract class ShortenProviderTypeContract
 
     }
 
+    /**
+     * @param mixed $name
+     * @return ShortenProviderTypeContract
+     */
+    protected function setName($name)
+    {
+
+        $this->name = $name;
+
+        return $this;
+
+    }
+
+    /**
+     * @param mixed $address
+     * @return ShortenProviderTypeContract
+     */
+    protected function setAddress($address)
+    {
+
+        $this->address = $address;
+
+        return $this;
+
+    }
 
     /**
      * @return mixed

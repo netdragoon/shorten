@@ -2,6 +2,7 @@
 
 namespace Canducci\Shorten\Contracts;
 
+use Canducci\Shorten\Curl;
 
 abstract class ProviderContract
 {
@@ -13,6 +14,56 @@ abstract class ProviderContract
     protected $client;
 
     protected $longurl;
+
+    /**
+     * ProviderContract constructor.
+     */
+    public function __construct()
+    {
+
+        $this->setClient(new Curl());
+
+    }
+
+
+    /**
+     * @param $longurl
+     * @return $this
+     */
+    protected function setLongUrl($longurl)
+    {
+
+        $this->longurl = $longurl;
+
+        return $this;
+
+    }
+
+    /**
+     * @param $client
+     * @return $this
+     */
+    protected function setClient($client)
+    {
+
+        $this->client = $client;
+
+        return $this;
+
+    }
+
+    /**
+     * @param $address
+     * @return $this
+     */
+    protected function setAddress($address)
+    {
+
+        $this->address = $address;
+
+        return $this;
+
+    }
 
     /**
      * @return mixed
@@ -59,6 +110,7 @@ abstract class ProviderContract
      */
     public function getContent()
     {
+
         return $this
             ->getClient()
             ->getResult(sprintf($this->address, $this->longurl));

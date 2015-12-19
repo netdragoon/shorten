@@ -7,8 +7,6 @@ use Canducci\Shorten\Contracts\GooglContract;
 class Googl extends GooglContract
 {
 
-    private $key;
-
     /**
      * Googl constructor.
      * @param $url
@@ -29,13 +27,11 @@ class Googl extends GooglContract
     public function create($url, $key)
     {
 
-        $this->address = 'https://www.googleapis.com/urlshortener/v1/url?key=%s';
+        $this->setAddress('https://www.googleapis.com/urlshortener/v1/url?key=%s');
 
-        $this->client = new Curl();
+        $this->setLongUrl($url);
 
-        $this->longurl = $url;
-
-        $this->key = $key;
+        $this->setKey($key);
 
         $this->information['url'] = 'https://www.googleapis.com/';
 
@@ -54,15 +50,10 @@ class Googl extends GooglContract
         $result = $this
             ->getClient()
             ->postResult(
-
                 sprintf($this->address, $this->key),
-
                 json_encode(
-
                     array('longUrl' => $this->longurl)
-
                 )
-
             );
 
         return json_decode($result)->id;

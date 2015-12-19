@@ -87,7 +87,7 @@ class ShortenServiceProvider extends ServiceProvider
         $this->app->bind(TinyUrlContract::class, 'tinyurl');
         $this->app->bind(TrimContract::class, 'trim');
         $this->app->bind(ShortenContract::class, 'shorten');
-        
+
     }
 
 }

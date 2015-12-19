@@ -7,14 +7,6 @@ use Canducci\Shorten\Contracts\TrImContract;
 class TrIm extends TrImContract
 {
 
-    private $seed;
-
-    private $key;
-
-    private $keyword;
-
-    private $vanitydomain;
-
     /**
      * TrIm constructor.
      */
@@ -36,19 +28,17 @@ class TrIm extends TrImContract
     public function create($url, $key, $seed = null, $keyword = null, $vanitydomain = null)
     {
 
-        $this->address = 'https://tr.im/links';
+        $this->setAddress('https://tr.im/links');
 
-        $this->client = new Curl();
+        $this->setLongUrl($url);
 
-        $this->longurl = $url;
+        $this->setKey($key);
 
-        $this->key = $key;
+        $this->setSeed($seed);
 
-        $this->seed = $seed;
+        $this->setKeyword($keyword);
 
-        $this->keyword = $keyword;
-
-        $this->vanitydomain = $vanitydomain;
+        $this->setVanityDomain($vanitydomain);
 
         $this->information['url'] = 'https://tr.im/';
 
@@ -67,22 +57,16 @@ class TrIm extends TrImContract
         $result = $this
             ->getClient()
             ->postResult(
-
-                $this->address,
-
+                $this->getAddress(),
                 json_encode(
-
                     array(
-                        'long_url' => $this->longurl,
-                        'seed' => $this->seed,
-                        'keyword' => $this->keyword,
-                        'vanity_domain' => $this->vanitydomain
+                        'long_url' => $this->getLongUrl(),
+                        'seed' => $this->getSeed(),
+                        'keyword' => $this->getKeyword(),
+                        'vanity_domain' => $this->getVanityDomain()
                     )
-
                 ),
-
-            array('x-api-key:'.$this->key)
-
+            array('x-api-key:'.$this->getKey())
         );
 
         return json_decode($result)->url;

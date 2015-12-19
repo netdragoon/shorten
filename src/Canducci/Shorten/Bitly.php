@@ -7,8 +7,6 @@ use Canducci\Shorten\Contracts\BitlyContract;
 class Bitly extends BitlyContract
 {
 
-    protected $token;
-
     /**
      * Bitly constructor.
      * @param $url
@@ -29,13 +27,11 @@ class Bitly extends BitlyContract
     public function create($url, $token)
     {
 
-        $this->address = 'https://api-ssl.bitly.com/v3/shorten?access_token=%s&longUrl=%s&format=txt';
+        $this->setAddress('https://api-ssl.bitly.com/v3/shorten?access_token=%s&longUrl=%s&format=txt');
 
-        $this->client = new Curl();
+        $this->setLongUrl($url);
 
-        $this->longurl = $url;
-
-        $this->token = $token;
+        $this->setToken($token);
 
         $this->information['url'] = 'http://www.bitly.com/';
 

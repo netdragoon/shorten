@@ -18,7 +18,7 @@ class Shorten extends ShortenContract
         if (is_null($provider) === false)
         {
 
-            $this->provider = $provider;
+            $this->setProvider($provider);
 
         }
 

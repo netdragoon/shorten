@@ -25,11 +25,9 @@ class MigreMe extends MigreMeContract
     public function create($url)
     {
 
-        $this->address = 'http://migre.me/api.txt?url=%s';
+        $this->setAddress('http://migre.me/api.txt?url=%s');
 
-        $this->client = new Curl();
-
-        $this->longurl = $url;
+        $this->setLongUrl($url);
 
         $this->information['url'] = 'http://migre.me/';
 

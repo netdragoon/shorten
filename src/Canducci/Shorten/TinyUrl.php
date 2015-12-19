@@ -25,11 +25,9 @@ class TinyUrl extends TinyUrlContract
     public function create($url)
     {
 
-        $this->address = 'http://tinyurl.com/api-create.php?url=%s';
+        $this->setAddress('http://tinyurl.com/api-create.php?url=%s');
 
-        $this->client = new Curl();
-
-        $this->longurl = $url;
+        $this->setLongUrl($url);
 
         $this->information['url'] = 'http://tinyurl.com/';
 

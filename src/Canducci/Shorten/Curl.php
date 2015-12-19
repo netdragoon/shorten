@@ -49,12 +49,8 @@ class Curl extends CurlContract
 
             array
             (
-
                 'Content-Type: application/json',
-
                 'Content-Length: ' . strlen($values)
-
-
             )
         );
 
