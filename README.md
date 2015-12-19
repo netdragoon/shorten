@@ -212,6 +212,37 @@ echo '<br>';
 echo $shorten5->receive()->getShortUrl();
 ```
 
+_Single Instance_
+
+```PHP
+$provider0 = new \Canducci\Shorten\IsGd('https://packagist.org/packages/canducci/shorten');
+$provider1 = new \Canducci\Shorten\TinyUrl('https://packagist.org/packages/canducci/shorten');
+$provider2 = new \Canducci\Shorten\MigreMe('https://packagist.org/packages/canducci/shorten');
+$provider3 = new \Canducci\Shorten\Bitly('https://packagist.org/packages/canducci/shorten','key_bitly');
+$provider4 = new \Canducci\Shorten\Googl('https://packagist.org/packages/canducci/shorten','key_google');
+$provider5 = new \Canducci\Shorten\TrIm('https://packagist.org/packages/canducci/shorten','key_api');
+
+$shorten0 = new \Canducci\Shorten\Shorten($provider0);
+$shorten1 = new \Canducci\Shorten\Shorten($provider1);
+$shorten2 = new \Canducci\Shorten\Shorten($provider2);
+$shorten3 = new \Canducci\Shorten\Shorten($provider3);
+$shorten4 = new \Canducci\Shorten\Shorten($provider4);
+$shorten5 = new \Canducci\Shorten\Shorten($provider5);
+
+echo $shorten0->receive()->getShortUrl();
+echo '<br>';
+echo $shorten1->receive()->getShortUrl();
+echo '<br>';
+echo $shorten2->receive()->getShortUrl();
+echo '<br>';
+echo $shorten3->receive()->getShortUrl();
+echo '<br>';
+echo $shorten4->receive()->getShortUrl();
+echo '<br>';
+echo $shorten5->receive()->getShortUrl();
+
+```
+
 ### Note
 
 These three providers below must have a register in that site to be released to generate short url with token or key provided on the same register.
