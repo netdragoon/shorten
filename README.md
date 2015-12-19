@@ -10,6 +10,17 @@ __Providers:__ _BitLy_, _Googl_, _IsGd_, _MigreMe_, _TinyUrl_ and _TrIm._
 [![Packagist](https://img.shields.io/packagist/v/canducci/shorten.svg?label=version)](https://packagist.org/packages/canducci/shorten)
 [![](https://img.shields.io/twitter/url/https/packagist.org/packages/canducci/shorten.svg?style=social)]()
 
+The package offers providers in their most current version can be selected for obtaining URL shortened. Are they:
+
+- Bitly (https://bitly.com/)
+- Googl (https://developers.google.com/url-shortener/v1/getting_started)
+- IsGd (http://is.gd)
+- MigreMe (http://migre.me/)
+- TinyUrl (http://tinyurl.com/)
+- TrIm (https://tr.im/links)
+
+All of these providers work in a clear and objective manner to generate the urls.
+
 ## Quick start
 
 ### Required setup
