@@ -44,9 +44,7 @@ class Curl extends CurlContract
         $ch = curl_init();
 
         $headers = array_merge(
-
             $headers,
-
             array
             (
                 'Content-Type: application/json',

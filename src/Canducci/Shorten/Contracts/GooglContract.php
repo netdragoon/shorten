@@ -2,6 +2,8 @@
 
 namespace Canducci\Shorten\Contracts;
 
+use Canducci\Shorten\Shorten;
+
 abstract class GooglContract extends ProviderContract
 {
 

@@ -9,10 +9,10 @@ use Canducci\Shorten\TinyUrl;
 use Canducci\Shorten\TrIm;
 use Canducci\Shorten\Contracts\ProviderContract;
 
-if (!function_exists('shorted'))
+if (!function_exists('shorten'))
 {
 
-    function shorted(ProviderContract $provider)
+    function shorten(ProviderContract $provider)
     {
 
         return new Shorten($provider);

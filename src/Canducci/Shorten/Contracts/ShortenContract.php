@@ -2,6 +2,7 @@
 
 namespace Canducci\Shorten\Contracts;
 
+use Canducci\Shorten\Shorten;
 use Canducci\Shorten\ShortenProviderType;
 use Canducci\Shorten\ShortenReceive;
 
@@ -65,6 +66,16 @@ abstract class ShortenContract
         );
 
         return new ShortenReceive($providerType, $receive);
+
+    }
+
+    /**
+     * @return Shorten
+     */
+    public function newInstance()
+    {
+
+        return new Shorten(null);
 
     }
 
