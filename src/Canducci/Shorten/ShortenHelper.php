@@ -1,10 +1,13 @@
 <?php
 
+use Canducci\Shorten\Bitly;
 use Canducci\Shorten\Contracts\ProviderContract;
+use Canducci\Shorten\Googl;
 use Canducci\Shorten\IsGd;
 use Canducci\Shorten\MigreMe;
 use Canducci\Shorten\Shorten;
 use Canducci\Shorten\TinyUrl;
+use Canducci\Shorten\TrIm;
 
 if (!function_exists('shorted'))
 {
@@ -60,7 +63,31 @@ if (!function_exists('bitly'))
     function bitly($url, $token)
     {
 
-        return new \Canducci\Shorten\Bitly($url, $token);
+        return new Bitly($url, $token);
+
+    }
+
+}
+
+if (!function_exists('googl'))
+{
+
+    function googl($url, $key)
+    {
+
+        return new Googl($url, $key);
+
+    }
+
+}
+
+if (!function_exists('tr_im'))
+{
+
+    function tr_im($url, $key)
+    {
+
+        return new TrIm($url, $key);
 
     }
 
