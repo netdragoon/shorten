@@ -14,6 +14,8 @@ class TinyUrl extends TinyUrlContract
     public function __construct($url)
     {
 
+        parent::__construct();
+
         $this->create($url);
 
     }

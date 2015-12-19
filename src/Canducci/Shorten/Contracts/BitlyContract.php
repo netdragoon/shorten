@@ -8,6 +8,17 @@ abstract class BitlyContract extends ProviderContract
     protected $token;
 
     /**
+     * BitlyContract constructor.
+     */
+    public function __construct()
+    {
+
+        parent::__construct();
+
+    }
+
+
+    /**
      * @return mixed
      */
     protected function getToken()

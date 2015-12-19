@@ -14,6 +14,8 @@ class IsGd extends IsGdContract
     public function __construct($url)
     {
 
+        parent::__construct();
+
         $this->create($url);
 
     }

@@ -8,6 +8,17 @@ abstract class GooglContract extends ProviderContract
     protected $key;
 
     /**
+     * GooglContract constructor.
+     */
+    public function __construct()
+    {
+
+        parent::__construct();
+
+    }
+
+
+    /**
      * @return mixed
      */
     protected function getKey()

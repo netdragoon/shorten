@@ -14,6 +14,16 @@ abstract class TrImContract extends ProviderContract
     protected $vanitydomain;
 
     /**
+     * TrImContract constructor.
+     */
+    public function __construct()
+    {
+
+        parent::__construct();
+
+    }
+
+    /**
      * @return mixed
      */
     protected function getSeed()

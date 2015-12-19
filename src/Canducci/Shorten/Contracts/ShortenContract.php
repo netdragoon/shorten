@@ -46,8 +46,6 @@ abstract class ShortenContract
 
     }
 
-
-
     /**
      * @return mixed
      */

@@ -15,6 +15,8 @@ class Bitly extends BitlyContract
     public function __construct($url, $token)
     {
 
+        parent::__construct();
+
         $this->create($url, $token);
 
     }

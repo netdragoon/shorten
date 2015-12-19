@@ -14,6 +14,8 @@ class MigreMe extends MigreMeContract
     public function __construct($url)
     {
 
+        parent::__construct();
+
         $this->create($url);
 
     }

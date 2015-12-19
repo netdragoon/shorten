@@ -15,6 +15,8 @@ class Googl extends GooglContract
     public function __construct($url, $key)
     {
 
+        parent::__construct();
+
         $this->create($url, $key);
 
     }

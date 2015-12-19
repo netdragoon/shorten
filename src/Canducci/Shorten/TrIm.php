@@ -13,6 +13,8 @@ class TrIm extends TrImContract
     public function __construct($url, $key, $seed = null, $keyword = null, $vanitydomain = null)
     {
 
+        parent::__construct();
+
         $this->create($url, $key, $seed, $keyword, $vanitydomain);
 
     }
