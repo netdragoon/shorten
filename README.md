@@ -52,6 +52,47 @@ At the end of `config/app.php` add o `aliases` (Facade) in array
 ```
 
 ### How to use?
+
+Simple example using only one of the providers (IsGd):
+
+```PHP
+$provider = IsGd::create('https://packagist.org/packages/canducci/shorten');
+
+$shorten = Shorten::create($provider);
+
+$receive = $shorten->receive();
+
+var_dump($receive);
+var_dump($receive->getLongUrl());
+var_dump($receive->getShortUrl());
+var_dump($receive->getProviderType()->getName());
+var_dump($receive->getProviderType()->getAddress());
+
+//results
+object(Canducci\Shorten\ShortenReceive)#225 (3) {
+  ["longurl":protected]=>
+  string(47) "https://packagist.org/packages/canducci/shorten"
+  ["shorturl":protected]=>
+  string(19) "http://is.gd/amftYu"
+  ["providerType":protected]=>
+  object(Canducci\Shorten\ShortenProviderType)#224 (2) {
+    ["name":protected]=>
+    string(4) "IsGd"
+    ["address":protected]=>
+    string(13) "http://is.gd/"
+  }
+}
+
+string(47) "https://packagist.org/packages/canducci/shorten"
+
+string(19) "http://is.gd/amftYu"
+
+string(4) "IsGd"
+
+string(13) "http://is.gd/"
+
+```
+
 _Injection Contracts_
 
 ```PHP
@@ -99,7 +140,7 @@ Route::get('shorten1',
 });
 ```
 
-_Facades__
+_Facades_
 
 ```PHP
 $provider0 = IsGd::create('https://packagist.org/packages/canducci/shorten');
@@ -130,7 +171,7 @@ echo $shorten5->receive()->getShortUrl();
 
 ```
 
-_Functions__
+_Functions_
 
 ```PHP
 $provider0 = isgd('https://packagist.org/packages/canducci/shorten');
