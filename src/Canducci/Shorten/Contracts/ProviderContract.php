@@ -14,8 +14,6 @@ abstract class ProviderContract
 
     protected $longurl;
 
-    abstract public function getContent();
-
     /**
      * @return mixed
      */
@@ -53,6 +51,17 @@ abstract class ProviderContract
     {
 
         return $this->address;
+
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContent()
+    {
+        return $this
+            ->getClient()
+            ->getResult(sprintf($this->address, $this->longurl));
 
     }
 

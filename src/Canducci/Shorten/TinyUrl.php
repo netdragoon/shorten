@@ -4,25 +4,25 @@ namespace Canducci\Shorten;
 
 use Canducci\Shorten\Contracts\ProviderContract;
 
-class IsGd extends ProviderContract
+class TinyUrl extends ProviderContract
 {
 
     /**
-     * IsGd constructor.
+     * TinyUrl constructor.
      * @param $url
      */
     public function __construct($url)
     {
 
-        $this->address = 'http://is.gd/create.php?format=simple&url=%s';
+        $this->address = 'http://tinyurl.com/api-create.php?url=%s';
 
         $this->client = new Curl();
 
         $this->longurl = $url;
 
-        $this->information['url'] = 'http://is.gd/';
+        $this->information['url'] = 'http://tinyurl.com/';
 
-        $this->information['name'] = 'IsGd';
+        $this->information['name'] = 'TinyUrl';
 
     }
 
